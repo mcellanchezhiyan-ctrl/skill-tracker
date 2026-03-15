@@ -2,66 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Skill Tracker</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
 
-<h1>🚀 AI Skill Dashboard</h1>
+<h1>🚀 AI Skill Tracker Dashboard</h1>
 
-<div class="dashboard">
-
-<div class="stats">
-<p>🔥 Streak: <span id="streak">0</span></p>
-<p>⭐ XP: <span id="xp">0</span></p>
+<div class="progress-section">
+<h3>Overall Progress</h3>
+<div class="progress-bar">
+<div id="progressFill"></div>
 </div>
-
-<div class="progress-container">
-<div id="progressBar"></div>
-</div>
-
-</div>
-
-<h2>Add Topic</h2>
-
-<div class="form">
-
-<input id="topic" placeholder="Topic Name">
-
-<select id="category">
-<option>Python</option>
-<option>ML</option>
-<option>SQL</option>
-<option>DSA</option>
-<option>Other</option>
-</select>
-
-<input type="date" id="deadline">
-
-<select id="priority">
-<option>High</option>
-<option>Medium</option>
-<option>Low</option>
-</select>
-
-<select id="status">
-<option>Not Started</option>
-<option>In Progress</option>
-<option>Completed</option>
-</select>
-
-<button onclick="addTask()">Add Topic</button>
-
+<p id="progressText"></p>
 </div>
 
 <h2>Topics</h2>
 
-<div id="taskList"></div>
+<div id="taskContainer"></div>
+
+<h2>Weekly Progress</h2>
+<canvas id="progressChart"></canvas>
 
 <script src="script.js"></script>
 
