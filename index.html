@@ -1,25 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Skill Tracker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI Skill Tracker</title>
+
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
 </head>
 
 <body>
 
-<h1>🚀 My AI Skill Tracker</h1>
+<h1>🚀 AI Skill Dashboard</h1>
 
-<div id="skills"></div>
+<div class="dashboard">
 
-<h2>Projects</h2>
+<div class="stats">
+<p>🔥 Streak: <span id="streak">0</span></p>
+<p>⭐ XP: <span id="xp">0</span></p>
+</div>
 
-<ul>
-<li>Artificial Dressing Room</li>
-<li>Road Traffic Prediction</li>
-<li>Duplicate Image Detection</li>
-<li>Automatic Attendance System</li>
-<li>Student Mood Recognition</li>
-</ul>
+<div class="progress-container">
+<div id="progressBar"></div>
+</div>
+
+</div>
+
+<h2>Add Topic</h2>
+
+<div class="form">
+
+<input id="topic" placeholder="Topic Name">
+
+<select id="category">
+<option>Python</option>
+<option>ML</option>
+<option>SQL</option>
+<option>DSA</option>
+<option>Other</option>
+</select>
+
+<input type="date" id="deadline">
+
+<select id="priority">
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+</select>
+
+<select id="status">
+<option>Not Started</option>
+<option>In Progress</option>
+<option>Completed</option>
+</select>
+
+<button onclick="addTask()">Add Topic</button>
+
+</div>
+
+<h2>Topics</h2>
+
+<div id="taskList"></div>
 
 <script src="script.js"></script>
 

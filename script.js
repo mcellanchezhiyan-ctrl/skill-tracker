@@ -1,53 +1,74 @@
-const skills = [
-{name:"Python",days:30},
-{name:"OOPS",days:30},
-{name:"SQL",days:30},
-{name:"Django",days:45},
-{name:"DSA",days:60},
-{name:"Excel",days:10},
-{name:"Power BI",days:30},
-{name:"Machine Learning",days:30},
-{name:"Deep Learning",days:30},
-{name:"NLP",days:40},
-{name:"AI",days:30},
-{name:"GEN AI",days:30}
-];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-const container=document.getElementById("skills");
+let xp = localStorage.getItem("xp") || 0;
+let streak = localStorage.getItem("streak") || 0;
 
-skills.forEach((skill,index)=>{
+document.getElementById("xp").innerText = xp;
+document.getElementById("streak").innerText = streak;
 
-let progress=localStorage.getItem(skill.name)||0;
+function save(){
+localStorage.setItem("tasks", JSON.stringify(tasks));
+localStorage.setItem("xp", xp);
+localStorage.setItem("streak", streak);
+}
 
-let div=document.createElement("div");
-div.className="skill";
+function addTask(){
 
-div.innerHTML=`
-<h3>${skill.name} (${skill.days} days)</h3>
+let topic = document.getElementById("topic").value;
+let category = document.getElementById("category").value;
+let deadline = document.getElementById("deadline").value;
+let priority = document.getElementById("priority").value;
+let status = document.getElementById("status").value;
 
-<div class="progress">
-<div class="bar" id="bar${index}" style="width:${progress}%"></div>
+let task = {
+topic,
+category,
+deadline,
+priority,
+status
+};
+
+tasks.push(task);
+
+if(status === "Completed"){
+xp = parseInt(xp) + 10;
+streak = parseInt(streak) + 1;
+}
+
+save();
+render();
+}
+
+function render(){
+
+let container = document.getElementById("taskList");
+container.innerHTML = "";
+
+let completed = 0;
+
+tasks.forEach((t,i)=>{
+
+if(t.status === "Completed") completed++;
+
+container.innerHTML += `
+<div class="task">
+<h3>${t.topic}</h3>
+<p>Category: ${t.category}</p>
+<p>Priority: ${t.priority}</p>
+<p>Status: ${t.status}</p>
+<p>Deadline: ${t.deadline}</p>
 </div>
-
-<button onclick="updateProgress('${skill.name}',${index})">
-Done Today
-</button>
 `;
-
-container.appendChild(div);
-
 });
 
-function updateProgress(name,index){
+let progress = (completed / tasks.length) * 100 || 0;
 
-let progress=localStorage.getItem(name)||0;
+document.getElementById("progressBar").style.width = progress + "%";
 
-progress=parseInt(progress)+3;
+document.getElementById("xp").innerText = xp;
+document.getElementById("streak").innerText = streak;
 
-if(progress>100) progress=100;
-
-localStorage.setItem(name,progress);
-
-document.getElementById("bar"+index).style.width=progress+"%";
-
+save();
 }
+
+render();
