@@ -1,0 +1,171 @@
+{
+ "topics":[
+
+{
+"title":"Python",
+"tasks":[
+"Python installation",
+"Variables and data types",
+"Operators",
+"Input output",
+"Strings",
+"If else",
+"Loops",
+"Functions",
+"Lists",
+"Dictionaries",
+"Sets",
+"File handling"
+]
+},
+
+{
+"title":"OOPS",
+"tasks":[
+"Classes",
+"Objects",
+"Constructors",
+"Inheritance",
+"Polymorphism",
+"Encapsulation",
+"Abstraction"
+]
+},
+
+{
+"title":"SQL",
+"tasks":[
+"Database basics",
+"Create table",
+"Insert data",
+"Select query",
+"Where clause",
+"Joins",
+"Group by",
+"Subqueries",
+"Views"
+]
+},
+
+{
+"title":"Django",
+"tasks":[
+"Django installation",
+"Project structure",
+"Apps",
+"Models",
+"Admin panel",
+"Templates",
+"Forms",
+"Authentication",
+"REST API"
+]
+},
+
+{
+"title":"DSA",
+"tasks":[
+"Time complexity",
+"Arrays",
+"Linked lists",
+"Stacks",
+"Queues",
+"Hash tables",
+"Sorting",
+"Searching",
+"Trees",
+"Graphs",
+"Dynamic programming"
+]
+},
+
+{
+"title":"Excel",
+"tasks":[
+"Excel basics",
+"Formulas",
+"Pivot tables",
+"Charts",
+"Data cleaning"
+]
+},
+
+{
+"title":"Power BI",
+"tasks":[
+"Power BI interface",
+"Import data",
+"Data transformation",
+"DAX basics",
+"Dashboard creation"
+]
+},
+
+{
+"title":"Machine Learning",
+"tasks":[
+"ML introduction",
+"Linear regression",
+"Logistic regression",
+"Decision trees",
+"Random forest",
+"Model evaluation"
+]
+},
+
+{
+"title":"Deep Learning",
+"tasks":[
+"Neural networks",
+"Activation functions",
+"Backpropagation",
+"CNN",
+"RNN"
+]
+},
+
+{
+"title":"NLP",
+"tasks":[
+"Text preprocessing",
+"Tokenization",
+"Stop words",
+"TF-IDF",
+"Word embeddings"
+]
+},
+
+{
+"title":"AI",
+"tasks":[
+"AI basics",
+"Search algorithms",
+"Knowledge representation",
+"Expert systems"
+]
+},
+
+{
+"title":"Generative AI",
+"tasks":[
+"Transformers",
+"GPT models",
+"Prompt engineering",
+"Text generation",
+"Image generation"
+]
+},
+
+{
+"title":"Cloud",
+"tasks":[
+"Azure fundamentals",
+"AWS basics",
+"EC2",
+"S3",
+"IAM"
+]
+}
+
+]
+}
